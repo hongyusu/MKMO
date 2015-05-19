@@ -1,0 +1,69 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips13submit_e,times}
+\usepackage{bm}
+\input{su_macros}
+
+\nipsfinalcopy
+
+\title{Multiple kernel multiple output learning}
+
+
+
+\author{
+% Hongyu Su\\
+% Aalto University\\
+% \texttt{hongyu.su@aalto.fi}\\
+%\And
+%Coauthor \\
+%Affiliation \\
+%Address \\
+%\texttt{email} \\
+%(if needed)\\
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+%\newcommand{\fix}{\marginpar{FIX}}
+%\newcommand{\new}{\marginpar{NEW}}
+
+%\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\section{Method}
+
+
+We use $\psib(\vx,\vy)$ to denote the joint feature map, which is composed by an input feature map $\phib(\vx)$ and an output feature map $\varphib(\vy)$ defined as
+\begin{align*}
+	\psib(\vx,\vy) = \phib(\vx)\otimes\varphib(\vy),
+\end{align*}
+where $\otimes$ is the Kroecker product. 
+In particular, the input feature is a collection of $n$ feature maps defined as
+\begin{align*}
+	\phib(\vx) = (\phib_k(\vx))_{k\in\{1,\cdots,n\}},
+\end{align*}
+where $\phib_k(\vx)$ is the $k$th input feature map, e.g., the bag-of-words feature of an example $\vx$.
+The output feature map $\varphib(\vy)$ is a collection of feature maps defined on the edges of a Markov network
+\begin{align*}
+	\varphib(\vy) = (\varphib_e(\vy_e))_{e\in E},
+\end{align*}
+where edge specific feature map $\varphib_e(\vy_e)$ is defined on edge $e=(p,q)$ as
+\begin{align*}
+	\varphib_e(\vy_e) = (u_{e,\lnn}(\vy_e),u_{e,\lnp}(\vy_e),u_{e,\lpn}(\vy_e),u_{e,\lpp}(\vy_e))^{\tp}\otimes\thetab^{p,q}
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
